@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Lapzo</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">LAPZO ADMIN</div>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active" onclick="showSection('products')">
+                <span>📦</span> Products
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('add-product')">
+                <span>➕</span> Add Product
+            </a>
+            <a href="index.html" class="nav-item">
+                <span>🏠</span> View Shop
+            </a>
+            <a href="#" class="nav-item" onclick="logout()">
+                <span>🚪</span> Logout
+            </a>
+        </nav>
+        <div class="user-info">
+            <p id="adminName">Admin</p>
+            <p id="adminEmail">admin@lapzo.lk</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1 id="pageTitle">Products Management</h1>
+            <div class="header-actions">
+                <span id="productCount">0 products</span>
+            </div>
+        </div>
+
+        <!-- Products List Section -->
+        <div id="products-section" class="section active">
+            <div class="search-filter">
+                <input type="text" id="searchProducts" placeholder="Search products...">
+                <select id="filterCategory">
+                    <option value="all">All Categories</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="desktops">Desktops</option>
+                    <option value="components">Components</option>
+                    <option value="peripherals">Peripherals</option>
+                </select>
+            </div>
+
+            <div class="products-table-container">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Brand</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <tr>
+                            <td colspan="8" style="text-align: center; padding: 40px;">Loading products...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Add/Edit Product Section -->
+        <div id="add-product-section" class="section">
+            <div class="form-container">
+                <h2 id="formTitle">Add New Product</h2>
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productName">Product Name *</label>
+                            <input type="text" id="productName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productBrand">Brand *</label>
+                            <input type="text" id="productBrand" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productCategory">Category *</label>
+                            <select id="productCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="laptops">Laptops</option>
+                                <option value="desktops">Desktops</option>
+                                <option value="components">Components</option>
+                                <option value="peripherals">Peripherals</option>
+                                <option value="accessories">Accessories</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productBadge">Badge</label>
+                            <select id="productBadge">
+                                <option value="">No Badge</option>
+                                <option value="Sale">Sale</option>
+                                <option value="New">New</option>
+                                <option value="Hot">Hot</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productPrice">Price (LKR) *</label>
+                            <input type="number" id="productPrice" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productOriginalPrice">Original Price (LKR)</label>
+                            <input type="number" id="productOriginalPrice" step="0.01">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productImageUrl">Image URL *</label>
+                        <input type="text" id="productImageUrl" required placeholder="https://example.com/image.jpg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productDescription">Specifications (One per line) *</label>
+                        <textarea id="productDescription" rows="8" required placeholder="Intel Core i9-14900HX Processor
+16GB DDR5 5600 RAM
+1TB PCIe 4.0 NVMe M.2 SSD
+..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="productInStock" checked>
+                            In Stock
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Add Product</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <h3>Confirm Delete</h3>
+            <p>Are you sure you want to delete this product?</p>
+            <div class="modal-actions">
+                <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                <button class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+
+</html>
