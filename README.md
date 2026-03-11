@@ -27,8 +27,8 @@ Key Highlights:
 
 •	Admin Dashboard for product management
 ________________________________________
-✨ Features
-For Customers:
+✨ Features<br>
+For Customers:<br>
 •	✅ Browse products with advanced filters (brand, price range, category)
 •	✅ Search products by name, brand, or specifications
 •	✅ View detailed product information with specifications
