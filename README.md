@@ -7,15 +7,24 @@ Index Number : FC221013
 
 A full-stack e-commerce web application for selling computers, laptops, and tech products. Built with Spring Boot backend and vanilla JavaScript frontend.
 ________________________________________
-🎯 Overview
-Lapzo is a modern e-commerce platform designed for selling computer hardware and electronics. The application features a RESTful backend API built with Spring Boot, connected to a MySQL database, and a responsive frontend built with HTML, CSS, and vanilla JavaScript.
-Key Highlights:
-•	Full CRUD Operations for product management
-•	Role-based Access Control (Admin & User)
-•	Session-based Authentication with localStorage
-•	Responsive Design for mobile and desktop
-•	Advanced Filtering by brand, price, category
-•	Shopping Cart with localStorage persistence
+🎯 Overview  
+
+Lapzo is a modern e-commerce platform designed for selling computer hardware and electronics. The application features a RESTful backend API built with Spring Boot, connected to a MySQL database, and a responsive frontend built with HTML, CSS, and vanilla JavaScript.  
+
+Key Highlights:  
+
+•	Full CRUD Operations for product management  
+
+•	Role-based Access Control (Admin & User)  
+
+•	Session-based Authentication with localStorage  
+
+•	Responsive Design for mobile and desktop  
+
+•	Advanced Filtering by brand, price, category  
+
+•	Shopping Cart with localStorage persistence  
+
 •	Admin Dashboard for product management
 ________________________________________
 ✨ Features
