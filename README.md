@@ -29,231 +29,230 @@ Key Highlights:
 ________________________________________
 ✨ Features<br>
 For Customers:<br>
-•	✅ Browse products with advanced filters (brand, price range, category)
-•	✅ Search products by name, brand, or specifications
-•	✅ View detailed product information with specifications
-•	✅ Add/remove items from shopping cart
-•	✅ Update product quantities in cart
-•	✅ User registration and authentication
-•	✅ User profile management
-•	✅ Checkout process with order summary
-•	✅ Responsive design for all devices
-For Administrators:
-•	✅ Secure admin dashboard
-•	✅ Add new products with detailed specifications
-•	✅ Edit existing product information
-•	✅ Delete products from inventory
-•	✅ View all products in a table format
-•	✅ Search and filter products
-•	✅ Manage product stock status
-•	✅ Set product badges (Sale, New, Hot)
-•	✅ View order management (upcoming feature)
+•	✅ Browse products with advanced filters (brand, price range, category)<br>
+•	✅ Search products by name, brand, or specifications<br>
+•	✅ View detailed product information with specifications<br>
+•	✅ Add/remove items from shopping cart<br>
+•	✅ Update product quantities in cart<br>
+•	✅ User registration and authentication<br>
+•	✅ User profile management<br>
+•	✅ Checkout process with order summary<br>
+•	✅ Responsive design for all devices<br>
+For Administrators:<br>
+•	✅ Secure admin dashboard<br>
+•	✅ Add new products with detailed specifications<br>
+•	✅ Edit existing product information<br>
+•	✅ Delete products from inventory<br>
+•	✅ View all products in a table format<br>
+•	✅ Search and filter products<br>
+•	✅ Manage product stock status<br>
+•	✅ Set product badges (Sale, New, Hot)<br>
+•	✅ View order management (upcoming feature)<br>
 ________________________________________
-🔐 Authentication Endpoints
-Register User
-POST /api/auth/register
-Content-Type: application/json
+🔐 Authentication Endpoints<br>
+Register User<br>
+POST /api/auth/register<br>
+Content-Type: application/json<br><br>
 
-Request Body:
-{
-  "username": "john_doe",
-  "email": "john@example.com",
-  "password": "password123",
-  "fullName": "John Doe",
-  "role": "USER"
-}
+Request Body:<br>
+{<br>
+  "username": "john_doe",<br>
+  "email": "john@example.com",<br>
+  "password": "password123",<br>
+  "fullName": "John Doe",<br>
+  "role": "USER"<br>
+}<br><br>
 
-Response: 200 OK
-{
-  "id": 1,
-  "username": "john_doe",
-  "email": "john@example.com",
-  "role": "USER",
-  "fullName": "John Doe",
-  "message": "Registration successful"
-}
+Response: 200 OK<br>
+{<br>
+  "id": 1,<br>
+  "username": "john_doe",<br>
+  "email": "john@example.com",<br>
+  "role": "USER",<br>
+  "fullName": "John Doe",<br>
+  "message": "Registration successful"<br>
+}<br><br>
 
-Error Response: 400 Bad Request
-{
-  "error": "Username already exists"
-}
-Login
-POST /api/auth/login
-Content-Type: application/json
+Error Response: 400 Bad Request<br>
+{<br>
+  "error": "Username already exists"<br>
+}<br>
+Login<br>
+POST /api/auth/login<br>
+Content-Type: application/json<br><br>
 
-Request Body:
-{
-  "username": "john_doe",
-  "password": "password123"
-}
+Request Body:<br>
+{<br>
+  "username": "john_doe",<br>
+  "password": "password123"<br>
+}<br><br>
 
-Response: 200 OK
-{
-  "id": 1,
-  "username": "john_doe",
-  "email": "john@example.com",
-  "role": "USER",
-  "fullName": "John Doe",
-  "message": "Login successful"
-}
+Response: 200 OK<br>
+{<br>
+  "id": 1,<br>
+  "username": "john_doe",<br>
+  "email": "john@example.com",<br>
+  "role": "USER",<br>
+  "fullName": "John Doe",<br>
+  "message": "Login successful"<br>
+}<br><br>
 
-Error Response: 401 Unauthorized
-{
-  "error": "Invalid username or password"
-}
-Get User by ID
-GET /api/auth/user/{id}
-Example: GET /api/auth/user/1
+Error Response: 401 Unauthorized<br>
+{<br>
+  "error": "Invalid username or password"<br>
+}<br>
+Get User by ID<br>
+GET /api/auth/user/{id}<br>
+Example: GET /api/auth/user/1<br>
 ________________________________________
-📦 Product Endpoints
-Get All Products
-GET /api/products
+📦 Product Endpoints<br>
+Get All Products<br>
+GET /api/products<br><br>
 
-Get Product by ID
-GET /api/products/{id}
-Example: GET /api/products/1
+Get Product by ID<br>
+GET /api/products/{id}<br>
+Example: GET /api/products/1<br><br>
 
-Get Products by Category
-GET /api/products/category/{category}
-Example: GET /api/products/category/laptops
+Get Products by Category<br>
+GET /api/products/category/{category}<br>
+Example: GET /api/products/category/laptops<br><br>
 
-Get Products by Brand
-GET /api/products/brand/{brand}
-Example: GET /api/products/brand/Apple
+Get Products by Brand<br>
+GET /api/products/brand/{brand}<br>
+Example: GET /api/products/brand/Apple<br><br>
 
-Search Products
-GET /api/products/search?query={searchTerm}
-Example: GET /api/products/search?query=macbook
+Search Products<br>
+GET /api/products/search?query={searchTerm}<br>
+Example: GET /api/products/search?query=macbook<br><br>
 
-Description: Searches products by name, brand, category, and description
-Create Product (Admin Only)
-POST /api/products
-Request Body:
-{
-  "name": "Dell XPS 15",
-  "category": "laptops",
-  "brand": "Dell",
-  "price": 625000.00,
-  "originalPrice": 695000.00,
-  "description": "Intel Core i7\n16GB RAM\n512GB SSD",
-  "imageUrl": "images/products/dell-xps.jpg",
-  "badge": "Sale",
-  "inStock": true
-}
+Description: Searches products by name, brand, category, and description<br>
+Create Product (Admin Only)<br>
+POST /api/products<br>
+Request Body:<br>
+{<br>
+  "name": "Dell XPS 15",<br>
+  "category": "laptops",<br>
+  "price": 625000.00,<br>
+  "originalPrice": 695000.00,<br>
+  "description": "Intel Core i7\n16GB RAM\n512GB SSD",<br>
+  "imageUrl": "images/products/dell-xps.jpg",<br>
+  "badge": "Sale",<br>
+  "inStock": true<br>
+}<br><br>
 
-Response: 201 Created
-{
-  "id": 15,
-  "name": "Dell XPS 15",
-  "category": "laptops",
-  ...
-}
+Response: 201 Created<br>
+{<br>
+  "id": 15,<br>
+  "name": "Dell XPS 15",<br>
+  "category": "laptops",<br>
+  ...<br>
+}<br>
 
-Update Product (Admin Only)
-PUT /api/products/{id}
-Example: PUT /api/products/1
+Update Product (Admin Only)<br>
+PUT /api/products/{id}<br>
+Example: PUT /api/products/1<br><br>
 
-Request Body:
-{
-  "name": "MacBook Pro 16\" M3 Max - Updated",
-  "category": "laptops",
-  "brand": "Apple",
-  "price": 850000.00,
-  "originalPrice": 999000.00,
-  "description": "Updated description",
-  "imageUrl": "images/products/macbook-new.jpg",
-  "badge": "Hot",
-  "inStock": true
-}
+Request Body:<br>
+{<br>
+  "name": "MacBook Pro 16\" M3 Max - Updated",<br>
+  "category": "laptops",<br>
+  "brand": "Apple",<br>
+  "price": 850000.00,<br>
+  "originalPrice": 999000.00,<br>
+  "description": "Updated description",<br>
+  "imageUrl": "images/products/macbook-new.jpg",<br>
+  "badge": "Hot",<br>
+  "inStock": true<br>
+}<br><br>
 
-Response: 200 OK
-{
-  "id": 1,
-  "name": "MacBook Pro 16\" M3 Max - Updated",
-  ...
-}
+Response: 200 OK<br>
+{<br>
+  "id": 1,<br>
+  "name": "MacBook Pro 16\" M3 Max - Updated",<br>
+  ...<br>
+}<br><br>
 
-Error Response: 404 Not Found
+Error Response: 404 Not Found<br><br>
 
-Delete Product (Admin Only)
-DELETE /api/products/{id}
-Example: DELETE /api/products/1
+Delete Product (Admin Only)<br>
+DELETE /api/products/{id}<br>
+Example: DELETE /api/products/1<br>
 ________________________________________
-👤 User Endpoints
-Get All Users (Admin Only)
-GET /api/users
+👤 User Endpoints<br>
+Get All Users (Admin Only)<br>
+GET /api/users<br><br>
 
-Get User Profile
-GET /api/users/{id}
-Example: GET /api/users/2
+Get User Profile<br>
+GET /api/users/{id}<br>
+Example: GET /api/users/2<br><br>
 
-Update User Profile
-PUT /api/users/{id}
+Update User Profile<br>
+PUT /api/users/{id}<br><br>
 
-Delete User Account
-DELETE /api/users/{id}
-Example: DELETE /api/users/2
+Delete User Account<br>
+DELETE /api/users/{id}<br>
+Example: DELETE /api/users/2<br>
 ________________________________________
-🛒 Cart Endpoints
-Get User Cart
-GET /api/cart/{userId}
-Example: GET /api/cart/2
+🛒 Cart Endpoints<br>
+Get User Cart<br>
+GET /api/cart/{userId}<br>
+Example: GET /api/cart/2<br><br>
 
-Add Item to Cart
-POST /api/cart/add
+Add Item to Cart<br>
+POST /api/cart/add<br><br>
 
-Update Cart Item Quantity
-PUT /api/cart/update
+Update Cart Item Quantity<br>
+PUT /api/cart/update<br><br>
 
-Remove Item from Cart
-DELETE /api/cart/remove
+Remove Item from Cart<br>
+DELETE /api/cart/remove<br><br>
 
-Clear Cart
-DELETE /api/cart/clear/{userId}
-Example: DELETE /api/cart/clear/2
+Clear Cart<br>
+DELETE /api/cart/clear/{userId}<br>
+Example: DELETE /api/cart/clear/2<br>
 ________________________________________
-📋 Order Endpoints
-Create Order
-POST /api/orders
+📋 Order Endpoints<br>
+Create Order<br>
+POST /api/orders<br><br>
 
-Get User Orders
-GET /api/orders/user/{userId}
-Example: GET /api/orders/user/2
+Get User Orders<br>
+GET /api/orders/user/{userId}<br>
+Example: GET /api/orders/user/2<br><br>
 
-Get Order by ID
-GET /api/orders/{orderId}
-Example: GET /api/orders/ORD-2024-001
+Get Order by ID<br>
+GET /api/orders/{orderId<br>
+Example: GET /api/orders/ORD-2024-001<br><br>
 
-Get All Orders (Admin Only)
-GET /api/orders
+Get All Orders (Admin Only)<br>
+GET /api/orders<br><br>
 
-Update Order Status (Admin Only)
-PUT /api/orders/{orderId}/status
+Update Order Status (Admin Only)<br>
+PUT /api/orders/{orderId}/status<br><br>
 
-Cancel Order
-PUT /api/orders/{orderId}/cancel
-Example: PUT /api/orders/ORD-2024-001/cancel
+Cancel Order<br>
+PUT /api/orders/{orderId}/cancel<br>
+Example: PUT /api/orders/ORD-2024-001/cancel<br>
 ________________________________________
-👥 User Roles
-1. ADMIN
-Permissions:
-•	✅ Full access to admin dashboard
-•	✅ Create, Read, Update, Delete products
-•	✅ View all users
-•	✅ View all orders
-•	✅ Update order status
-•	✅ Manage inventory
-•	✅ Access shop as a regular user
-2. USER
-Permissions:
-•	✅ Browse and search products
-•	✅ Filter products by category, brand, price
-•	✅ View product details
-•	✅ Add/remove products to cart
-•	✅ Update cart quantities
-•	✅ Place orders
-•	✅ View order history
-•	✅ Update profile
-•	❌ Cannot access admin dashboard
-•	❌ Cannot modify product data
-•	❌ Cannot view other users' data
+👥 User Roles<br>
+1. ADMIN<br>
+Permissions:<br>
+•	✅ Full access to admin dashboard<br>
+•	✅ Create, Read, Update, Delete products<br>
+•	✅ View all users<br>
+•	✅ View all orders<br>
+•	✅ Update order status<br>
+•	✅ Manage inventory<br>
+•	✅ Access shop as a regular user<br>
+2. USER<br>
+Permissions:<br>
+•	✅ Browse and search products<br>
+•	✅ Filter products by category, brand, price<br>
+•	✅ View product details<br>
+•	✅ Add/remove products to cart<br>
+•	✅ Update cart quantities<br>
+•	✅ Place orders<br>
+•	✅ View order history<br>
+•	✅ Update profile<br>
+•	❌ Cannot access admin dashboard<br>
+•	❌ Cannot modify product data<br>
+•	❌ Cannot view other users' data<br>
