@@ -1,7 +1,10 @@
 # E-Commerce-Platform
-🛒 Lapzo - E-Commerce Web Application
-Name : S.H.G.Mithila
-Index Number : FC221013
+🛒 Lapzo - E-Commerce Web Application  
+
+Name : S.H.G.Mithila  
+
+Index Number : FC221013  
+
 A full-stack e-commerce web application for selling computers, laptops, and tech products. Built with Spring Boot backend and vanilla JavaScript frontend.
 ________________________________________
 🎯 Overview
